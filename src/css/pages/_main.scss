@@ -1,0 +1,117 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  background-color: $bg;
+  color: $text-color;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.header__btn {
+  display: inline-block;
+  background-color: $btn-color;
+  padding: 5px 10px;
+  border: 1px solid $text-color;
+  border-radius: 8px;
+  text-decoration: none;
+  color: $text-color;
+  font-size: 18px;
+  transition: all 0.2s;
+  &:hover {
+    background-color: darken($btn-color, 8%);
+  }
+}
+
+section {
+  padding: 70px 1em 0;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $bg;
+  box-sizing: border-box;
+}
+nav {
+  padding: 1em;
+  position: absolute;
+  z-index: 99;
+}
+section:target {
+  display: block;
+}
+#home {
+  display: block;
+}
+
+table {
+  border: 1px solid $border;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid $border;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 20px;
+}
+
+.parent-margin {
+  td {
+    padding: 5px 10px;
+    min-width: 50px;
+  }
+
+  .child-1 {
+    text-align: start;
+  }
+
+  .child-2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .child-3 {
+    text-align: end;
+  }
+}
+
+.home__calculator {
+  display: flex;
+  gap: 20px;
+
+  .home__calculator-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      border: 1px solid $border;
+      border-radius: 8px;
+      background-color: $bg;
+      color: $text-color;
+      outline: none;
+      padding: 5px 10px;
+      width: 100px;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+
