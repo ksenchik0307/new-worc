@@ -1,22 +1,4 @@
 export function terminal () {
-    const dataCash = [
-        {
-            name: 'php8.1 web/1.saib.d2.3dev.tech/public_html/admin/cli/purge_caches.php'
-        },
-        {
-            name: 'php8.1 web/3.vtb.d2.3dev.tech/public_html/admin/cli/purge_caches.php'
-        },
-        {
-            name: 'php8.1 web/2.yoolearn.d2.3dev.tech/public_html/admin/cli/purge_caches.php'
-        },
-        {
-            name: 'php8.1 web/2.cbb.d2.3dev.tech/public_html/admin/cli/purge_caches.php'
-        },
-        {
-            name: 'php8.1 web/1.teboil.d2.3dev.tech/public_html/admin/cli/purge_caches.php'
-        },
-    ]
-
     const dataGit = [
         {
             name: 'git submodule update --force --recursive --init --remote'
@@ -65,20 +47,6 @@ export function terminal () {
         },
     ]
 
-    const parentCash = document.querySelector('.terminal__cash');
-
-    for (let i = 0; i < dataCash.length; i++) {
-        const item = dataCash[i];
-
-        const markup = `
-        <tr>
-            <td>${item.name}</td>
-         </tr>
-    `;
-
-        parentCash.insertAdjacentHTML('beforeend', markup);
-    }
-
     const parentGit = document.querySelector('.terminal__git');
 
     for (let i = 0; i < dataGit.length; i++) {
@@ -105,5 +73,34 @@ export function terminal () {
     `;
 
         parentSandbox.insertAdjacentHTML('beforeend', markup);
+    }
+
+    // записываем данные в строку песка
+    const cashNumbBtns = document.querySelectorAll('.terminal__cash-btn-numb');
+    const cashProjectBtns = document.querySelectorAll('.terminal__cash-btn-projqct');
+
+    const cashNumbDisplay = document.getElementById('cash-numb');
+    const cashProjectDisplay = document.getElementById('cash-project');
+
+    cashNumbBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            cashNumbDisplay.textContent = this.textContent; // Записываем текст в элемент cash-numb
+            localStorage.setItem('cashNumb', this.textContent); // Сохраняем значение в Local Storage
+        });
+    });
+
+    cashProjectBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            cashProjectDisplay.textContent = this.textContent; // Записываем текст в элемент cash-project
+            localStorage.setItem('cashProject', this.textContent); // Сохраняем значение в Local Storage
+        });
+    });
+
+    if (localStorage.getItem('cashNumb')) {
+        cashNumbDisplay.textContent = localStorage.getItem('cashNumb');
+    }
+
+    if (localStorage.getItem('cashProject')) {
+        cashProjectDisplay.textContent = localStorage.getItem('cashProject');
     }
 }

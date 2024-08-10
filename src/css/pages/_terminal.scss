@@ -1,3 +1,25 @@
 #terminal {
+  .terminal__cash {
+    border: 1px solid $border;
+    padding: 10px;
 
+    & > div {
+      border-bottom: 1px solid $border;
+    }
+
+    &-btn-wrap {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      div {
+        font-size: 14px;
+        @extend %btn;
+      }
+    }
+
+    &-res {
+      padding: 20px 0;
+    }
+  }
 }
