@@ -35,8 +35,10 @@ section {
   box-sizing: border-box;
 }
 nav {
-  padding: 1em;
   position: absolute;
+  display: flex;
+  gap: 15px;
+  padding: 1em;
   z-index: 99;
 }
 section:target {
@@ -49,6 +51,10 @@ section:target {
 table {
   border: 1px solid $border;
   border-collapse: collapse;
+
+  td {
+    padding: 8px 20px;
+  }
 
   th, td {
     border: 1px solid $border;
@@ -65,53 +71,3 @@ p {
   align-items: start;
   gap: 20px;
 }
-
-.parent-margin {
-  td {
-    padding: 5px 10px;
-    min-width: 50px;
-  }
-
-  .child-1 {
-    text-align: start;
-  }
-
-  .child-2 {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .child-3 {
-    text-align: end;
-  }
-}
-
-.home__calculator {
-  display: flex;
-  gap: 20px;
-
-  .home__calculator-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    input {
-      border: 1px solid $border;
-      border-radius: 8px;
-      background-color: $bg;
-      color: $text-color;
-      outline: none;
-      padding: 5px 10px;
-      width: 100px;
-    }
-
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  }
-}
-
-
