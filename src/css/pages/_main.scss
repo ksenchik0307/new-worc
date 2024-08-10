@@ -11,6 +11,16 @@ body {
   letter-spacing: 0.5px;
 }
 
+.pink {
+  color: $color-pink;
+  font-weight: 700;
+}
+
+.blue {
+  color: $color-blue;
+  font-weight: 700;
+}
+
 .header__btn {
   display: inline-block;
   font-size: 18px;
@@ -62,4 +72,5 @@ p {
   flex-wrap: wrap;
   align-items: start;
   gap: 20px;
+  margin-bottom: 20px;
 }

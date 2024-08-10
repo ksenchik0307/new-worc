@@ -32,6 +32,25 @@ export function home() {
         },
     ];
 
+    const dataMedia = [
+        {
+            name1: 'ml-<span class="blue">sm</span>-1',
+            name2: '(min-width: 576px)'
+        },
+        {
+            name1: 'ml-<span class="blue">md</span>-1',
+            name2: '(min-width: 768px)'
+        },
+        {
+            name1: 'ml-<span class="blue">lg</span>-1',
+            name2: '(min-width: 992px)'
+        },
+        {
+            name1: 'ml-<span class="blue">xl</span>-1',
+            name2: '(min-width: 1200px)'
+        },
+    ]
+
     const parentMargin = document.querySelector('.parent-margin');
 
     for (let i = 0; i < dataMargin.length; i++) {
@@ -51,6 +70,21 @@ export function home() {
     `;
 
         parentMargin.insertAdjacentHTML('beforeend', markup);
+    }
+
+    const parentMedia = document.querySelector('.parent-media');
+
+    for (let i = 0; i < dataMedia.length; i++) {
+        const item = dataMedia[i];
+
+        const markup = `
+        <tr>
+            <td class="child-1">${item.name1}</td>            
+            <td class="child-3">${item.name2}</td>
+         </tr>
+    `;
+
+        parentMedia.insertAdjacentHTML('beforeend', markup);
     }
     
     //калькулятор

@@ -31,7 +31,7 @@ export function terminal () {
 
     const dataSandbox = [
         {
-            name: '<b><u>Перенести песок с девелопа на первый</u></b>'
+            name: '<span class="pink">Перенести песок с девелопа на первый</span>'
         },
         {
             name: '/tools/replace_sandbox_74.sh cbb 2.cbb develop.cbb copy awsdno_logs'
@@ -40,7 +40,7 @@ export function terminal () {
             name: '/tools/replace_sandbox_81.sh cbb 2.cbb develop.cbb copy logs'
         },
         {
-            name: '<b><u>Перезалить песок</u></b>'
+            name: '<span class="pink">Перезалить песок</span>'
         },
         {
             name: '/tools/replace_sandbox_postgres_81.sh yoolearn 2.yoolearn develop.yoolearn copy no_logs'
@@ -75,7 +75,7 @@ export function terminal () {
         parentSandbox.insertAdjacentHTML('beforeend', markup);
     }
 
-    // записываем данные в строку песка
+    // записываем значения в строку песка
     const cashNumbBtns = document.querySelectorAll('.terminal__cash-btn-numb');
     const cashProjectBtns = document.querySelectorAll('.terminal__cash-btn-projqct');
 
@@ -84,15 +84,15 @@ export function terminal () {
 
     cashNumbBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            cashNumbDisplay.textContent = this.textContent; // Записываем текст в элемент cash-numb
-            localStorage.setItem('cashNumb', this.textContent); // Сохраняем значение в Local Storage
+            cashNumbDisplay.textContent = this.textContent;
+            localStorage.setItem('cashNumb', this.textContent);
         });
     });
 
     cashProjectBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            cashProjectDisplay.textContent = this.textContent; // Записываем текст в элемент cash-project
-            localStorage.setItem('cashProject', this.textContent); // Сохраняем значение в Local Storage
+            cashProjectDisplay.textContent = this.textContent;
+            localStorage.setItem('cashProject', this.textContent);
         });
     });
 
