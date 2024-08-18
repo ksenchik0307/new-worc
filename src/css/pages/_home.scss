@@ -19,7 +19,8 @@
 }
 
 .home__calculator {
-  display: flex;
+  display: flex;flex-wrap: wrap;
+  max-width: 275px;
   gap: 20px;
 
   .home__calculator-flex {
