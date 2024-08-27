@@ -4,25 +4,14 @@ export function terminal () {
             name: 'git submodule update --force --recursive --init --remote'
         },
         {
-            name: 'feature/theme_vtb/VTBVTB-97'
-        },
-        {
-            name: 'feature/theme_emerald/CBB-55'
-        },
-        {
-            name: 'feature/theme_ppls/AF-1024'
-        },
-        {
-            name: 'feature/theme_imperial/YOOLEARN-14'
+            name: `в теме - feature/theme_название темы/номер задачи <br>
+в плагине внутри local - feature/local_название плагина/номер задачи`
         },
         {
             name: 'feature/local_ebt/PPLS-652'
         },
         {
             name: 'feature/theme_emerald/CBB-29'
-        },
-        {
-            name: 'feature/theme_forest/SHELL-529'
         },
         {
             name: 'FINAL.WIP.Draft'
