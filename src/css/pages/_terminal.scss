@@ -2,9 +2,17 @@
   .terminal__cash {
     border: 1px solid $border;
     padding: 10px;
+    width: 722px;
+    box-sizing: border-box;
 
     & > div {
       border-bottom: 1px solid $border;
+    }
+
+    &-btn-wrap-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
     }
 
     &-btn-wrap {
@@ -19,7 +27,7 @@
     }
 
     &-res {
-      padding: 20px 0;
+      margin: 15px 0;
     }
   }
 }

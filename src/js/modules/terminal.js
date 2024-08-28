@@ -67,14 +67,21 @@ export function terminal () {
     // записываем значения в строку песка
     const cashNumbBtns = document.querySelectorAll('.terminal__cash-btn-numb');
     const cashProjectBtns = document.querySelectorAll('.terminal__cash-btn-projqct');
+    const cashLogBtn = document.querySelectorAll('.terminal__cash-btn-log');
 
     const cashNumbDisplay = document.getElementById('cash-numb');
     const cashProjectDisplay = document.getElementById('cash-project');
+    const cashLogRes = document.querySelectorAll('.terminal-res-log');
+    const cashProjRes = document.querySelectorAll('.cash-res-proj');
+    const cashNumbRes = document.querySelectorAll('.cash-res-numb');
 
     cashNumbBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             cashNumbDisplay.textContent = this.textContent;
             localStorage.setItem('cashNumb', this.textContent);
+            cashNumbRes.forEach(span => {
+                span.textContent = this.textContent;
+            });
         });
     });
 
@@ -82,6 +89,17 @@ export function terminal () {
         btn.addEventListener('click', function() {
             cashProjectDisplay.textContent = this.textContent;
             localStorage.setItem('cashProject', this.textContent);
+            cashProjRes.forEach(span => {
+                span.textContent = this.textContent;
+            });
+        });
+    });
+
+    cashLogBtn.forEach(btn => {
+        btn.addEventListener('click', function() {
+            cashLogRes.forEach(span => {
+                span.textContent = this.textContent;
+            });
         });
     });
 
