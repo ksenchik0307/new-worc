@@ -4,6 +4,7 @@ $bg: #424242;
 $btn-color: #800080;
 $color-pink: #ac5eac;
 $color-blue: #879ff8;
+$green: #2c782c;
 
 %btn {
   background-color: $btn-color;
@@ -20,4 +21,13 @@ $color-blue: #879ff8;
   &:active {
     background-color: darken($btn-color, 15%);
   }
+}
+
+%input {
+  border: 1px solid $border;
+  border-radius: 8px;
+  background-color: $bg;
+  color: $text-color;
+  outline: none;
+  padding: 5px 10px;
 }

@@ -1,6 +1,6 @@
-import {home} from "./modules/home.js";
+import {calculator} from "./modules/calculator.js";
 import {terminal} from "./modules/terminal.js";
 
 
-home();
+calculator();
 terminal();

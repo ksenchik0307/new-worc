@@ -14,66 +14,37 @@
 <body>
 
 <nav>
-   <a class="header__btn" href="#">Отступы</a>
-   <a class="header__btn" href="#flex">Flex</a>
+   <a class="header__btn" href="#flex">Bootstrap</a>
    <a class="header__btn" href="#terminal">Terminal</a>
 <!--   <a class="header__btn" href="#about2">About</a>-->
    <a class="header__btn" href="#storm">Storm</a>
 </nav>
 
-<section id="home">
-   <div class="flex">
-
-      <table>
-         <tbody class="parent-margin">
-         </tbody>
-      </table>
-
-      <div class="home__calculator">
-         <div class="home__calculator-flex">
-            <label for="rem">rem</label>
-            <input type="number" id="rem" placeholder="">
-         </div>
-
-         <div class="home__calculator-flex">
-            <label for="px">px</label>
-            <input type="number" id="px" placeholder="">
-         </div>
-         <p>$spacer * <span id="home__calculator-result"></span></p>
-      </div>
-
-      <div class="flex">
-         <table>
-            <tbody class="parent-media">
-            </tbody>
-         </table>
-      </div>
-
-   </div>
-
-
-</section>
-
-
 <!-- №2 Flex -->
 <section id="flex">
+   <div class="home__calculator">
+      <div class="home__calculator-flex">
+         <label for="rem">rem</label>
+         <input type="number" id="rem" placeholder="">
+      </div>
+
+      <div class="home__calculator-flex">
+         <label for="px">px</label>
+         <input type="number" id="px" placeholder="">
+      </div>
+      <p>$spacer * <span id="home__calculator-result"></span></p>
+   </div>
    <div class="flex">
       <table>
          <tr>
-            <td>d-flex</td>
-            <td></td>
-         </tr>
-         <tr>
-            <td>flex-wrap</td>
-            <td></td>
-         </tr>
-         <tr>
             <td>
+               flex-wrap<br>
                flex-fill<br>
                flex-grow-1<br>
                flex-shrink-1
             </td>
             <td>
+               <br>
                flex: 1 1 auto (вся доступная ширина)<br>
                flex-grow: 1<br>
                flex-shrink: 1
@@ -140,7 +111,6 @@
          </tr>
          <tr>
             <td>
-               border<br>
                border-top<br>
                border-right<br>
                border-bottom<br>
@@ -150,7 +120,6 @@
          </tr>
          <tr>
             <td>
-               rounded<br>
                rounded-top<br>
                rounded-right<br>
                rounded-bottom<br>
@@ -159,7 +128,6 @@
                rounded-pill
             </td>
             <td>
-               <br>
                <br>
                <br>
                <br>
@@ -176,19 +144,55 @@
          </tr>
          <tr>
             <td>
-               text-decoration-none
-            </td>
-            <td>
-               text-decoration: none;
-            </td>
-         </tr>
-         <tr>
-            <td>
+               text-decoration-none<br>
                text-uppercase
             </td>
             <td>
+               text-decoration: none;<br>
                text-transform: uppercase;
             </td>
+         </tr>
+      </table>
+   </div>
+   <div class="flex">
+      <table>
+         <tr>
+            <td>m-1</td>
+            <td>4px</td>
+         </tr>
+         <tr>
+            <td>m-2</td>
+            <td>8px</td>
+         </tr>
+         <tr>
+            <td>m-3</td>
+            <td>16px</td>
+         </tr>
+         <tr>
+            <td>m-4</td>
+            <td>24px</td>
+         </tr>
+         <tr>
+            <td>m-5</td>
+            <td>48px</td>
+         </tr>
+      </table>
+      <table>
+         <tr>
+            <td>ml-<span class="blue">sm</span>-1</td>
+            <td>(min-width: 576px)</td>
+         </tr>
+         <tr>
+            <td>ml-<span class="blue">md</span>-1</td>
+            <td>(min-width: 768px)</td>
+         </tr>
+         <tr>
+            <td>ml-<span class="blue">lg</span>-1</td>
+            <td>(min-width: 992px)</td>
+         </tr>
+         <tr>
+            <td>ml-<span class="blue">xl</span>-1</td>
+            <td>(min-width: 1200px)</td>
          </tr>
       </table>
    </div>
@@ -198,58 +202,71 @@
 <!-- №3 Терминал -->
 <section id="terminal">
    <div class="">
-      <div>
+      <div class="flex">
          <div class="terminal__cash">
             <div>
                <div class="terminal__cash-btn-wrap">
-                  <div class="terminal__cash-btn-numb">1</div>
-                  <div class="terminal__cash-btn-numb">2</div>
-                  <div class="terminal__cash-btn-numb">3</div>
+                  <div class="terminal__cash-btn-numb btn">1</div>
+                  <div class="terminal__cash-btn-numb btn">2</div>
+                  <div class="terminal__cash-btn-numb btn">3</div>
                </div>
                <div class="terminal__cash-btn-wrap-wrap">
+                  <div id="projects-container"></div>
                   <div class="terminal__cash-btn-wrap">
-                     <div class="terminal__cash-btn-projqct">farml</div>
-                     <div class="terminal__cash-btn-projqct">vtb</div>
-                     <div class="terminal__cash-btn-projqct">yoolearn</div>
-                     <div class="terminal__cash-btn-projqct">cbb</div>
-                     <div class="terminal__cash-btn-projqct">teboil</div>
-                     <div class="terminal__cash-btn-projqct">cpso</div>
-                     <div class="terminal__cash-btn-projqct">ym</div>
-                     <div class="terminal__cash-btn-projqct">znanie</div>
-                  </div>
-                  <div class="terminal__cash-btn-wrap">
-                     <div class="terminal__cash-btn-log">logs</div>
-                     <div class="terminal__cash-btn-log">no_logs</div>
+                     <div class="terminal__cash-btn-log btn">logs</div>
+                     <div class="terminal__cash-btn-log btn">no_logs</div>
                   </div>
                </div>
-
             </div>
 
             <p class="terminal__cash-res">
-               php8.1 web/<span id="cash-numb"></span>.<span id="cash-project"></span>.d2.3dev.tech/public_html/admin/cli/purge_caches.php
+               php8.1 web/<span class="cash-numb">(песок)</span>.<span class="cash-project">(проект)</span>.d2.3dev.tech/public_html/admin/cli/purge_caches.php
             </p>
             <p class="terminal__cash-res">
-               /tools/replace_sandbox_81.sh <span class="cash-res-proj">cbb</span> <span class="cash-res-numb">2</span>.<span class="cash-res-proj">cbb</span> develop.<span class="cash-res-proj">cbb</span> copy <span class="terminal-res-log">logs</span>
+               /tools/replace_sandbox_postgres_81.sh <span class="cash-project">(проект)</span> <span class="cash-numb">(песок)</span>.<span class="cash-project">(проект)</span> develop.<span class="cash-project">(проект)</span> copy <span class="terminal-res-log">no_logs</span>
             </p>
-            <p class="terminal__cash-res">
-               /tools/replace_sandbox_postgres_81.sh <span class="cash-res-proj">yoolearn</span> <span class="cash-res-numb">2</span>.<span class="cash-res-proj">yoolearn</span> develop.<span class="cash-res-proj">yoolearn</span> copy <span class="terminal-res-log">no_logs</span>
-            </p>
+         </div>
+         <div>
+            <div class="flex">
+               <input type="text" id="add-project-input" placeholder="Добавить проект">
+               <button id="add-project-btn">ОК</button>
+            </div>
+
+
+            <div class="flex">
+               <input type="text" id="remove-project-input" placeholder="Удалить проект">
+               <button id="remove-project-btn">ОК</button>
+            </div>
          </div>
       </div>
       <br>
 
       <table>
-         <tbody class="terminal__git">
+         <tbody>
+         <tr>
+            <td>
+               git submodule update --force --recursive --init --remote</td>
+         </tr>
+         <tr>
+            <td>
+               в теме - feature/theme_название темы/номер задачи<br>
+               в плагине внутри local - feature/local_название плагина/номер задачи
+            </td>
+         </tr>
+         <tr>
+            <td>feature/local_ebt/PPLS-652</td>
+         </tr>
+         <tr>
+            <td>feature/theme_emerald/CBB-29</td>
+         </tr>
+         <tr>
+            <td>FINAL.WIP.Draft</td>
+         </tr>
          </tbody>
       </table>
       <br>
 
-      <div>
-         <table>
-            <tbody class="terminal__sandbox">
-            </tbody>
-         </table>
-      </div>
+
    </div>
 
 </section>

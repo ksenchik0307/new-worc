@@ -1,113 +1,89 @@
-export function terminal () {
-    const dataGit = [
-        {
-            name: 'git submodule update --force --recursive --init --remote'
-        },
-        {
-            name: `в теме - feature/theme_название темы/номер задачи <br>
-в плагине внутри local - feature/local_название плагина/номер задачи`
-        },
-        {
-            name: 'feature/local_ebt/PPLS-652'
-        },
-        {
-            name: 'feature/theme_emerald/CBB-29'
-        },
-        {
-            name: 'FINAL.WIP.Draft'
-        },
-    ]
+export function terminal() {
+    const projectsContainer = document.getElementById('projects-container');
+    const addProjectInput = document.getElementById('add-project-input');
+    const removeProjectInput = document.getElementById('remove-project-input');
+    const cashNumbDisplays = document.querySelectorAll('.cash-numb');
+    const cashProjectDisplays = document.querySelectorAll('.cash-project');
+    const terminalLogDisplay = document.querySelector('.terminal-res-log');
 
-    const dataSandbox = [
-        {
-            name: '<span class="pink">Перенести песок с девелопа на первый</span>'
-        },
-        {
-            name: '/tools/replace_sandbox_74.sh cbb 2.cbb develop.cbb copy awsdno_logs'
-        },
-        {
-            name: '/tools/replace_sandbox_81.sh cbb 2.cbb develop.cbb copy logs'
-        },
-        {
-            name: '<span class="pink">Перезалить песок</span>'
-        },
-        {
-            name: '/tools/replace_sandbox_postgres_81.sh yoolearn 2.yoolearn develop.yoolearn copy no_logs'
-        },
-    ]
+    let projects = JSON.parse(localStorage.getItem('projects'));
 
-    const parentGit = document.querySelector('.terminal__git');
-
-    for (let i = 0; i < dataGit.length; i++) {
-        const item = dataGit[i];
-
-        const markup = `
-        <tr>
-            <td>${item.name}</td>
-         </tr>
-    `;
-
-        parentGit.insertAdjacentHTML('beforeend', markup);
+    if (!projects) {
+        projects = ['yoolearn', 'ym'];
+        localStorage.setItem('projects', JSON.stringify(projects));
     }
 
-    const parentSandbox = document.querySelector('.terminal__sandbox');
+    function renderProjects() {
+        projectsContainer.innerHTML = '';
 
-    for (let i = 0; i < dataSandbox.length; i++) {
-        const item = dataSandbox[i];
-
-        const markup = `
-        <tr>
-            <td>${item.name}</td>
-         </tr>
-    `;
-
-        parentSandbox.insertAdjacentHTML('beforeend', markup);
+        projects.forEach(project => {
+            const projectBtn = document.createElement('div');
+            projectBtn.textContent = project;
+            projectBtn.className = 'terminal__cash-btn-projqct';
+            projectBtn.addEventListener('click', function() {
+                localStorage.setItem('selectedProject', project);
+                cashProjectDisplays.forEach(span => {
+                    span.textContent = project;
+                });
+            });
+            projectsContainer.appendChild(projectBtn);
+        });
     }
 
-    // записываем значения в строку песка
-    const cashNumbBtns = document.querySelectorAll('.terminal__cash-btn-numb');
-    const cashProjectBtns = document.querySelectorAll('.terminal__cash-btn-projqct');
-    const cashLogBtn = document.querySelectorAll('.terminal__cash-btn-log');
+    const numberButtons = document.querySelectorAll('.terminal__cash-btn-numb');
+    numberButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedNumber = this.textContent;
 
-    const cashNumbDisplay = document.getElementById('cash-numb');
-    const cashProjectDisplay = document.getElementById('cash-project');
-    const cashLogRes = document.querySelectorAll('.terminal-res-log');
-    const cashProjRes = document.querySelectorAll('.cash-res-proj');
-    const cashNumbRes = document.querySelectorAll('.cash-res-numb');
-
-    cashNumbBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            cashNumbDisplay.textContent = this.textContent;
-            localStorage.setItem('cashNumb', this.textContent);
-            cashNumbRes.forEach(span => {
-                span.textContent = this.textContent;
+            localStorage.setItem('selectedNumber', selectedNumber);
+            cashNumbDisplays.forEach(span => {
+                span.textContent = selectedNumber;
             });
         });
     });
 
-    cashProjectBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            cashProjectDisplay.textContent = this.textContent;
-            localStorage.setItem('cashProject', this.textContent);
-            cashProjRes.forEach(span => {
-                span.textContent = this.textContent;
-            });
+    const logButtons = document.querySelectorAll('.terminal__cash-btn-log');
+    logButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedLog = this.textContent;
+            terminalLogDisplay.textContent = selectedLog;
         });
     });
 
-    cashLogBtn.forEach(btn => {
-        btn.addEventListener('click', function() {
-            cashLogRes.forEach(span => {
-                span.textContent = this.textContent;
-            });
-        });
+    document.getElementById('add-project-btn').addEventListener('click', function() {
+        const newProject = addProjectInput.value.trim();
+        if (newProject && !projects.includes(newProject)) {
+            projects.push(newProject);
+            localStorage.setItem('projects', JSON.stringify(projects));
+            addProjectInput.value = '';
+            renderProjects();
+        }
     });
 
-    if (localStorage.getItem('cashNumb')) {
-        cashNumbDisplay.textContent = localStorage.getItem('cashNumb');
+    document.getElementById('remove-project-btn').addEventListener('click', function() {
+        const projectToRemove = removeProjectInput.value.trim();
+        if (projectToRemove && projects.includes(projectToRemove)) {
+            projects = projects.filter(project => project !== projectToRemove);
+            localStorage.setItem('projects', JSON.stringify(projects));
+            removeProjectInput.value = '';
+            renderProjects();
+        }
+    });
+
+    renderProjects();
+
+    const storedNumber = localStorage.getItem('selectedNumber');
+    const storedProject = localStorage.getItem('selectedProject');
+
+    if (storedNumber) {
+        cashNumbDisplays.forEach(span => {
+            span.textContent = storedNumber;
+        });
     }
 
-    if (localStorage.getItem('cashProject')) {
-        cashProjectDisplay.textContent = localStorage.getItem('cashProject');
+    if (storedProject) {
+        cashProjectDisplays.forEach(span => {
+            span.textContent = storedProject;
+        });
     }
 }

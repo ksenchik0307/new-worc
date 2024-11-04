@@ -19,15 +19,36 @@
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
-
-      div {
-        font-size: 18px;
-        @extend %btn;
-      }
     }
 
     &-res {
       margin: 15px 0;
     }
+  }
+
+  #add-project-input,
+  #remove-project-input {
+    @extend %input;
+    width: 170px;
+  }
+
+  #add-project-btn,
+  #remove-project-btn {
+    @extend %btn;
+    background-color: $green;
+
+     &:hover {
+       background-color: darken($green, 5%);
+     }
+  }
+
+  .terminal__cash-btn-projqct {
+    @extend %btn;
+  }
+
+  #projects-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
   }
 }
