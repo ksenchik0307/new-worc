@@ -86,4 +86,20 @@ export function terminal() {
             span.textContent = storedProject;
         });
     }
+
+    const copyCashBtn = document.querySelector('.copy-cash');
+    const copySandBtn = document.querySelector('.copy-sand');
+    const copyCashRes = document.getElementById('copy-cash');
+    const copySandRes = document.getElementById('copy-sand');
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text);
+    }
+
+    copyCashBtn.addEventListener('click', function () {
+        copyToClipboard(copyCashRes.textContent);
+    });
+    copySandBtn.addEventListener('click', function () {
+        copyToClipboard(copySandRes.textContent);
+    });
 }
