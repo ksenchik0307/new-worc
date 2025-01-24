@@ -1,3 +1,5 @@
+import {copyToClipboard} from "./helper.js";
+
 export function calculator() {
 
     //калькулятор
@@ -16,5 +18,12 @@ export function calculator() {
         const pxAmount = parseFloat(pxInput.value);
         remInput.value = pxAmount / exchangeRate;
         resultSpan.textContent = (pxAmount / exchangeRate) < 1 ? (pxAmount / exchangeRate).toString().replace(/^0/, '') : (pxAmount / exchangeRate);
+    });
+
+    const copySracerBtn = document.querySelector('.copy_spacer');
+    const copyResSpacBtn = document.querySelector('.home_result');
+
+    copySracerBtn.addEventListener('click', function () {
+        copyToClipboard(copyResSpacBtn.textContent);
     });
 }

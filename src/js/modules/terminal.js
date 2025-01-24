@@ -1,3 +1,5 @@
+import {copyToClipboard} from "./helper.js";
+
 export function terminal() {
     const projectsContainer = document.getElementById('projects-container');
     const addProjectInput = document.getElementById('add-project-input');
@@ -91,10 +93,6 @@ export function terminal() {
     const copySandBtn = document.querySelector('.copy-sand');
     const copyCashRes = document.getElementById('copy-cash');
     const copySandRes = document.getElementById('copy-sand');
-
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text);
-    }
 
     copyCashBtn.addEventListener('click', function () {
         copyToClipboard(copyCashRes.textContent);
