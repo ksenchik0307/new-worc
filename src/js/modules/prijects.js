@@ -1,19 +1,16 @@
 export function projects() {
-    document.querySelectorAll('.projects-btn').forEach(button => {
-        button.addEventListener('click', () => {
+    const buttons = document.querySelectorAll('.projects-btn');
+    const blocks = document.querySelectorAll('.content-block');
 
-            document.querySelectorAll('.projects-btn').forEach(btn => {
-                btn.classList.remove('btn-active');
-            });
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', () => {
 
-            button.classList.add('btn-active');
+            buttons.forEach(btn => btn.classList.remove('btn-active'));
+            blocks.forEach(block => block.classList.remove('active'));
 
-            document.querySelectorAll('.content-block').forEach(block => {
-                block.classList.remove('active');
-            });
+            buttons[i].classList.add('btn-active');
 
-            const target = button.getAttribute('data-target');
-            document.getElementById(target).classList.add('active');
+            blocks[i].classList.add('active');
         });
-    });
+    }
 }
