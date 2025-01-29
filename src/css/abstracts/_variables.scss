@@ -5,6 +5,7 @@ $btn-color: #800080;
 $color-pink: #ac5eac;
 $color-blue: #879ff8;
 $green: #2c782c;
+$green-light: #36d536;
 
 %btn {
   background-color: $btn-color;
@@ -23,6 +24,16 @@ $green: #2c782c;
   }
 }
 
+%link {
+  color: $text-color;
+  text-decoration: none;
+  transition: all .2s;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
 %input {
   border: 1px solid $border;
   border-radius: 8px;
@@ -30,4 +41,12 @@ $green: #2c782c;
   color: $text-color;
   outline: none;
   padding: 5px 10px;
+}
+
+.active {
+  display: block !important;
+}
+
+.btn-active {
+  color: $green-light !important;
 }

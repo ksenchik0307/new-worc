@@ -1,0 +1,32 @@
+#projects {
+  .wrap {
+    padding-top: 1em;
+    border-top: 1px solid $border;
+  }
+
+  .btn-wrap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1em;
+  }
+
+  .projects-btn {
+    @extend %btn;
+  }
+
+  .content-block {
+    display: none;
+  }
+
+  a {
+    @extend %link;
+  }
+
+  table {
+    width: 100%;
+
+    td:first-child {
+      width: 150px;
+    }
+  }
+}
