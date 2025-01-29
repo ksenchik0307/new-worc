@@ -20,13 +20,27 @@
 
   a {
     @extend %link;
+
+    &.figma {
+      cursor: default;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
   }
 
   table {
     width: 100%;
 
-    td:first-child {
-      width: 150px;
+    td {
+      vertical-align: top;
+
+      &:first-child {
+        width: 150px;
+      }
     }
+
+
   }
 }
