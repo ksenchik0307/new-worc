@@ -85,3 +85,7 @@ p {
 .btn {
   @extend %btn;
 }
+
+a {
+  @extend %link;
+}

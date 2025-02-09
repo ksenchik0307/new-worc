@@ -5,10 +5,10 @@ export function projects() {
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', () => {
 
-            buttons.forEach(btn => btn.classList.remove('btn-active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
             blocks.forEach(block => block.classList.remove('active'));
 
-            buttons[i].classList.add('btn-active');
+            buttons[i].classList.add('active');
 
             blocks[i].classList.add('active');
         });

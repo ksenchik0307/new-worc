@@ -12,15 +12,22 @@
 
   .projects-btn {
     @extend %btn;
+
+    &.active {
+      color: $green-light;
+      border-color: $green-light;
+    }
   }
 
   .content-block {
     display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
   a {
-    @extend %link;
-
     &.figma {
       cursor: default;
 

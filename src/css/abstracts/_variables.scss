@@ -18,6 +18,7 @@ $green-light: #36d536;
   cursor: pointer;
   &:hover {
     background-color: darken($btn-color, 5%);
+    color: $text-color;
   }
   &:active {
     background-color: darken($btn-color, 15%);
@@ -41,12 +42,4 @@ $green-light: #36d536;
   color: $text-color;
   outline: none;
   padding: 5px 10px;
-}
-
-.active {
-  display: block !important;
-}
-
-.btn-active {
-  color: $green-light !important;
 }
