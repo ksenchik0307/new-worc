@@ -7,6 +7,7 @@ export function terminal() {
     const cashNumbDisplays = document.querySelectorAll('.cash-numb');
     const cashProjectDisplays = document.querySelectorAll('.cash-project');
     const terminalLogDisplay = document.querySelector('.terminal-res-log');
+    const linkDisplay = document.getElementById('dynamic-link');
 
     let projects = JSON.parse(localStorage.getItem('projects'));
 
@@ -27,6 +28,7 @@ export function terminal() {
                 cashProjectDisplays.forEach(span => {
                     span.textContent = project;
                 });
+                updateLink();
             });
             projectsContainer.appendChild(projectBtn);
         });
@@ -41,6 +43,7 @@ export function terminal() {
             cashNumbDisplays.forEach(span => {
                 span.textContent = selectedNumber;
             });
+            updateLink();
         });
     });
 
@@ -72,6 +75,15 @@ export function terminal() {
         }
     });
 
+    function updateLink() {
+        const selectedNumber = localStorage.getItem('selectedNumber') || "";
+        const selectedProject = localStorage.getItem('selectedProject') || "";
+
+        const generatedUrl = `https://${selectedNumber}.${selectedProject}.d2.3dev.tech`;
+        linkDisplay.textContent = generatedUrl;
+        linkDisplay.href = generatedUrl;
+    }
+
     renderProjects();
 
     const storedNumber = localStorage.getItem('selectedNumber');
@@ -88,6 +100,8 @@ export function terminal() {
             span.textContent = storedProject;
         });
     }
+
+    updateLink();
 
     const copyCashBtn = document.querySelector('.copy-cash');
     const copySandBtn = document.querySelector('.copy-sand');
