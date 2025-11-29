@@ -105,13 +105,18 @@ export function terminal() {
 
     const copyCashBtn = document.querySelector('.copy-cash');
     const copySandBtn = document.querySelector('.copy-sand');
+    const copySandMinBtn = document.querySelector('.copy-sand-min');
     const copyCashRes = document.getElementById('copy-cash');
     const copySandRes = document.getElementById('copy-sand');
+    const copySandMinRes = document.getElementById('copy-sand-min');
 
     copyCashBtn.addEventListener('click', function () {
         copyToClipboard(copyCashRes.textContent);
     });
     copySandBtn.addEventListener('click', function () {
         copyToClipboard(copySandRes.textContent);
+    });
+    copySandMinBtn.addEventListener('click', function () {
+        copyToClipboard(copySandMinRes.textContent);
     });
 }
