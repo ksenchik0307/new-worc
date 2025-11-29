@@ -1,12 +1,12 @@
 #terminal {
   .terminal__cash {
     border: 1px solid $border;
-    padding: 10px;
+    padding: 10px 10px 0;
     width: max-content;
     box-sizing: border-box;
     min-width: 950px;
 
-    & > div {
+    & > div:not(:last-child) {
       border-bottom: 1px solid $border;
     }
 
