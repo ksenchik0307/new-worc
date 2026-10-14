@@ -79,7 +79,7 @@ export function terminal() {
         const selectedNumber = localStorage.getItem('selectedNumber') || "";
         const selectedProject = localStorage.getItem('selectedProject') || "";
 
-        const generatedUrl = `https://${selectedNumber}.${selectedProject}.d2.3dev.tech`;
+        const generatedUrl = `https://${selectedNumber}.${selectedProject}.d3.3dev.tech`;
         linkDisplay.textContent = generatedUrl;
         linkDisplay.href = generatedUrl;
     }
